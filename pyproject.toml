@@ -1,0 +1,36 @@
+[project]
+name = "text-summarizer-using-hugging-face-and-transformers"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "boto3>=1.42.25",
+    "ensure==1.0.2",
+    "fastapi==0.78.0",
+    "jinja2==3.1.2",
+    "mypy-boto3-s3>=1.42.21",
+    "python-box==6.0.2",
+    "pyyaml>=6.0.3",
+    "uvicorn==0.18.3",
+]
+
+[dependency-groups]
+data = [
+    "matplotlib>=3.10.8",
+    "pandas>=2.3.3",
+    "tqdm>=4.67.1",
+]
+dev = [
+    "notebook>=7.5.1",
+]
+ml = [
+    "datasets>=4.4.2",
+    "evaluate>=0.4.6",
+    "nltk>=3.9.2",
+    "py7zr>=1.1.0",
+    "rouge-score>=0.1.2",
+    "sacrebleu>=2.5.1",
+    "torch>=2.9.1",
+    "transformers[sentencepiece]>=4.57.3",
+]
