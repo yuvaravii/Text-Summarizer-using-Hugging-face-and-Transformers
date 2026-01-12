@@ -60,10 +60,8 @@ This is my second end to end project with respect to ML and NLP. Implemented ste
 ## step-4: Running the hugging face in google colab
 - `!nvidia-smi`
 - `!pip install transformers[sentencepiece] datasets sacrebleu rouge_score py7zr -q`
-
-### Evaluation metrics of sentence generation/Summarization/translation
-- BLEU (Bilingual Evaluation Understudy): Measures similarity to reference translations (higher is better).
-- ROUGE (Recall-Oriented Understudy for Gisting Evaluation): Measures n-gram overlap for summarization (ROUGE-1, ROUGE-2, ROUGE-L).
-- BERTScore: Uses contextual embeddings to assess semantic similarity between generated and reference text.
-- METEOR: Considers synonyms and stemming, improving on BLEU.
-- Perplexity: Measures how well a probability model predicts a sample (lower is better for language models)
+-  ```
+    !pip install --upgrade accelerate
+    !pip uninstall -y transformers accelerate
+    !pip install transformers accelerate
+```
