@@ -1,6 +1,3 @@
-def main():
-    print("Hello from text-summarizer-using-hugging-face-and-transformers!")
+from src.textSummarizer.logging import logger
 
-
-if __name__ == "__main__":
-    main()
+logger.info("Ensuring the smooth functioning of logger")
