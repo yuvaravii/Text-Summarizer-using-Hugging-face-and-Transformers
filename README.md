@@ -60,8 +60,39 @@ This is my second end to end project with respect to ML and NLP. Implemented ste
 ## step-4: Running the hugging face in google colab
 - `!nvidia-smi`
 - `!pip install transformers[sentencepiece] datasets sacrebleu rouge_score py7zr -q`
--  ```
+- ```
     !pip install --upgrade accelerate
     !pip uninstall -y transformers accelerate
     !pip install transformers accelerate
-```
+     ```
+    
+## step-5: Converting the .ipynb file into modular programming
+
+### step-5.1 : Creation of workflows
+
+1. update `config.yaml`
+2. update `params.yaml`
+3. update `schema.yaml`
+4. update `entity` with necessary dataclasses
+5. update `configuration manager` by reading all yaml files and importing entity dataclasses too and converting them into configboxes
+6. update `components` with distinct purposes.
+7. update `pipelines` by aligning all the components together in a thread
+8. update `main.py` to debug and test and productionalize.
+9. create simple front end - `app.py` for testing the API and batch prediction
+
+
+### step-5.2: Play with .ipynb file first then build the modular programming
+1. Create `01_data_ingestion.ipynb` in `/research`
+    - update `config.yaml` --> has some input and gives some output (artifacts: files, logs, folders )[artifacts_root]
+    - `config.yaml` : has all the input file path and output file path too, generally this output file path are stored in folder called artifacts. This is a general practice.
+        - data_ingestion
+    - `src\textSummarizer\constants` : update __init__ file --> write the path of yaml files to load 
+        - we will be using the pathlib Path to read the yaml file with file path
+        - The read yaml file are now ready to function
+        - always write the constants in Captial letters as they general industrial practice
+    - `src\textSummarizer\entity` : update __init__
+
+2. 
+
+
+

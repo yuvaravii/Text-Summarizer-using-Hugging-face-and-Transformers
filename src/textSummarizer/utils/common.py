@@ -9,27 +9,40 @@ from typing import Any
 
 
 @ensure_annotations
-def read_yaml(path_to_yaml:Path)->ConfigBox:
-    """
-    reads yaml file and returns configBox
+def read_yaml(path_to_yaml: Path) -> ConfigBox:
+    with open(path_to_yaml, "r") as yaml_file:
+        content = yaml.safe_load(yaml_file)
 
-    Arguments
-        path_to_yaml (str):path to yaml file 
+    if content is None:
+        raise ValueError(f"YAML file is empty: {path_to_yaml}")
 
-    Raises
-        - error if yaml file is empty
+    return ConfigBox(content)
 
-    Returns
-        - Config: ConfigBox type
-    """
-    try:
-        with open(path_to_yaml) as yaml_file:
-            content = yaml.safe_load(yaml_file)
-            logger.info(f"Yaml file : {yaml_file} loaded successfully....!")
-    except BoxValueError:
-        raise ValueError("yaml file is empty")
-    except Exception as e:
-        raise e
+
+# @ensure_annotations
+# def read_yaml(path_to_yaml:Path)->ConfigBox:
+#     """
+#     reads yaml file and returns configBox
+
+#     Arguments
+#         path_to_yaml (str):path to yaml file 
+
+#     Raises
+#         - error if yaml file is empty
+
+#     Returns
+#         - Config: ConfigBox type
+#     """
+#     try:
+#         with open(path_to_yaml) as yaml_file:
+#             content = yaml.safe_load(yaml_file)
+#             logger.info(f"Yaml file : {yaml_file} loaded successfully....!")
+#     except BoxValueError:
+#         raise ValueError("yaml file is empty")
+#     except Exception as e:
+#         raise e
+    
+#     return ConfigBox(content)
 
 @ensure_annotations
 def create_directories(path_to_directories:list, verbose=True):
