@@ -68,7 +68,7 @@ This is my second end to end project with respect to ML and NLP. Implemented ste
     
 ## step-5: Converting the .ipynb file into modular programming
 
-### step-5.1 : Creation of workflows
+### step-5.1 : Creation of workflows --> this remains same till all the pipelines are created
 
 1. update `config.yaml`
 2. update `params.yaml`
@@ -81,7 +81,7 @@ This is my second end to end project with respect to ML and NLP. Implemented ste
 9. create simple front end - `app.py` for testing the API and batch prediction
 
 
-### step-5.2: Play with .ipynb file first then build the modular programming
+### step-5.2: Play with .ipynb file first then build the modular programming --> same applies to all the components
 1. Create `01_data_ingestion.ipynb` in `/research`
     - update `config.yaml` --> has some input and gives some output (artifacts: files, logs, folders )[artifacts_root]
     - `config.yaml` : has all the input file path and output file path too, generally this output file path are stored in folder called artifacts. This is a general practice.
@@ -92,7 +92,12 @@ This is my second end to end project with respect to ML and NLP. Implemented ste
         - always write the constants in Captial letters as they general industrial practice
     - `src\textSummarizer\entity` : update __init__
 
-2. 
+2. Once the code created and executed to view the executability then need to convert them into modular coding
+
+
+## step-6: modular programming
+- executing the workflow step by step and logging the information again
+
 
 
 
