@@ -1,7 +1,7 @@
 # since we got the input and output director, we need to read the yaml and store them as value
 from src.textSummarizer.constants import *
 from src.textSummarizer.utils.common import read_yaml, create_directories
-from src.textSummarizer.entity import DataIngestionConfig
+from src.textSummarizer.entity import DataIngestionConfig, DataTransformationConfig
 
 
 class ConfigurationManager:
@@ -26,3 +26,15 @@ class ConfigurationManager:
             unzip_dir= config.unzip_dir,
         )
         return data_ingestion_config
+    
+    def get_data_transformation_config(self)->DataTransformationConfig:
+        config = self.config.data_transformation
+        create_directories([config.root_dir])
+
+        data_transformation_config = DataTransformationConfig(
+            root_dir = config.root_dir,
+            data_path = config.data_path,
+            tokenizer_name = config.tokenizer_name
+        )
+
+        return data_transformation_config
