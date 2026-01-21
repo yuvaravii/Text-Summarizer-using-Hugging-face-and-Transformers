@@ -9,3 +9,8 @@
 [2026-01-20 05:24:53 | INFO | summarizerLogger | common.py:60 | Created directory at: artifacts]
 [2026-01-20 05:24:53 | INFO | summarizerLogger | common.py:60 | Created directory at: artifacts/data_ingestion]
 [2026-01-20 05:24:55 | INFO | summarizerLogger | 1669548521.py:25 | File downloaded and stored in local Successfully!!!]
+[2026-01-21 04:17:29 | INFO | summarizerLogger | main.py:9 | stage Data Ingestion stage initiated]
+[2026-01-21 04:17:29 | INFO | summarizerLogger | common.py:60 | Created directory at: artifacts]
+[2026-01-21 04:17:29 | INFO | summarizerLogger | common.py:60 | Created directory at: artifacts/data_ingestion]
+[2026-01-21 04:17:31 | INFO | summarizerLogger | data_ingestion.py:26 | File downloaded and stored in local Successfully!!!]
+[2026-01-21 04:17:31 | INFO | summarizerLogger | main.py:12 | Stage : Data Ingestion stage executed and completed| Status: Success]
