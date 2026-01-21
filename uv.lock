@@ -3727,12 +3727,14 @@ version = "0.1.0"
 source = { virtual = "." }
 dependencies = [
     { name = "boto3" },
+    { name = "datasets" },
     { name = "ensure" },
     { name = "fastapi" },
     { name = "jinja2" },
     { name = "mypy-boto3-s3" },
     { name = "python-box" },
     { name = "pyyaml" },
+    { name = "transformers" },
     { name = "uvicorn" },
 ]
 
@@ -3759,12 +3761,14 @@ ml = [
 [package.metadata]
 requires-dist = [
     { name = "boto3", specifier = ">=1.42.25" },
+    { name = "datasets", specifier = ">=4.4.2" },
     { name = "ensure", specifier = "==1.0.2" },
     { name = "fastapi", specifier = "==0.78.0" },
     { name = "jinja2", specifier = "==3.1.2" },
     { name = "mypy-boto3-s3", specifier = ">=1.42.21" },
     { name = "python-box", specifier = "==6.0.2" },
     { name = "pyyaml", specifier = ">=6.0.3" },
+    { name = "transformers", specifier = ">=4.57.3" },
     { name = "uvicorn", specifier = "==0.18.3" },
 ]
 
