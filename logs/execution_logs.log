@@ -29,3 +29,120 @@
 [2026-01-21 10:02:41 | INFO | summarizerLogger | common.py:60 | Created directory at: artifacts]
 [2026-01-21 10:02:41 | INFO | summarizerLogger | common.py:60 | Created directory at: artifacts/data_transformation]
 [2026-01-21 10:02:49 | INFO | summarizerLogger | main.py:24 | Stage : Data Transformation stage executed and completed| Status: Success]
+[2026-01-23 05:24:15 | INFO | summarizerLogger | main.py:9 | stage Data Ingestion stage initiated]
+[2026-01-23 05:24:15 | INFO | summarizerLogger | common.py:60 | Created directory at: artifacts]
+[2026-01-23 05:24:15 | INFO | summarizerLogger | common.py:60 | Created directory at: artifacts/data_ingestion]
+[2026-01-23 05:24:17 | INFO | summarizerLogger | data_ingestion.py:26 | File downloaded and stored in local Successfully!!!]
+[2026-01-23 05:24:17 | INFO | summarizerLogger | main.py:12 | Stage : Data Ingestion stage executed and completed| Status: Success]
+[2026-01-23 05:24:17 | INFO | summarizerLogger | main.py:21 | stage Data Transformation stage initiated]
+[2026-01-23 05:24:17 | INFO | summarizerLogger | common.py:60 | Created directory at: artifacts]
+[2026-01-23 05:24:17 | INFO | summarizerLogger | common.py:60 | Created directory at: artifacts/data_transformation]
+[2026-01-23 05:24:20 | ERROR | summarizerLogger | main.py:26 | 
+ requires the protobuf library but it was not found in your environment. Check out the instructions on the
+installation page of its repo: https://github.com/protocolbuffers/protobuf/tree/master/python#installation and follow the ones
+that match your environment. Please note that you may need to restart your runtime after installation.
+]
+Traceback (most recent call last):
+  File "/workspaces/Text-Summarizer-using-Hugging-face-and-Transformers/.venv/lib/python3.11/site-packages/transformers/tokenization_utils_base.py", line 2359, in _from_pretrained
+    tokenizer = cls(*init_inputs, **init_kwargs)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/Text-Summarizer-using-Hugging-face-and-Transformers/.venv/lib/python3.11/site-packages/transformers/models/pegasus/tokenization_pegasus_fast.py", line 136, in __init__
+    super().__init__(
+  File "/workspaces/Text-Summarizer-using-Hugging-face-and-Transformers/.venv/lib/python3.11/site-packages/transformers/tokenization_utils_fast.py", line 139, in __init__
+    fast_tokenizer = convert_slow_tokenizer(self, from_tiktoken=True)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/Text-Summarizer-using-Hugging-face-and-Transformers/.venv/lib/python3.11/site-packages/transformers/convert_slow_tokenizer.py", line 1857, in convert_slow_tokenizer
+    elif transformer_tokenizer.vocab_file.endswith("tekken.json"):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'endswith'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/workspaces/Text-Summarizer-using-Hugging-face-and-Transformers/main.py", line 23, in <module>
+    data_transformation_pipeline.initiate_data_transformation()
+  File "/workspaces/Text-Summarizer-using-Hugging-face-and-Transformers/src/textSummarizer/pipeline/stage_02_data_transformation_pipeline.py", line 12, in initiate_data_transformation
+    data_transformation_comp = DataTransformation(data_transformation_config)
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/Text-Summarizer-using-Hugging-face-and-Transformers/src/textSummarizer/components/data_transformation.py", line 15, in __init__
+    self.tokenizer = AutoTokenizer.from_pretrained(config.tokenizer_name)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/Text-Summarizer-using-Hugging-face-and-Transformers/.venv/lib/python3.11/site-packages/transformers/models/auto/tokenization_auto.py", line 1175, in from_pretrained
+    return tokenizer_class_fast.from_pretrained(pretrained_model_name_or_path, *inputs, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/Text-Summarizer-using-Hugging-face-and-Transformers/.venv/lib/python3.11/site-packages/transformers/tokenization_utils_base.py", line 2113, in from_pretrained
+    return cls._from_pretrained(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/Text-Summarizer-using-Hugging-face-and-Transformers/.venv/lib/python3.11/site-packages/transformers/tokenization_utils_base.py", line 2360, in _from_pretrained
+    except import_protobuf_decode_error():
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/Text-Summarizer-using-Hugging-face-and-Transformers/.venv/lib/python3.11/site-packages/transformers/tokenization_utils_base.py", line 88, in import_protobuf_decode_error
+    raise ImportError(PROTOBUF_IMPORT_ERROR.format(error_message))
+ImportError: 
+ requires the protobuf library but it was not found in your environment. Check out the instructions on the
+installation page of its repo: https://github.com/protocolbuffers/protobuf/tree/master/python#installation and follow the ones
+that match your environment. Please note that you may need to restart your runtime after installation.
+
+[2026-01-23 05:27:49 | INFO | summarizerLogger | main.py:9 | stage Data Ingestion stage initiated]
+[2026-01-23 05:27:49 | INFO | summarizerLogger | common.py:60 | Created directory at: artifacts]
+[2026-01-23 05:27:49 | INFO | summarizerLogger | common.py:60 | Created directory at: artifacts/data_ingestion]
+[2026-01-23 05:27:49 | INFO | summarizerLogger | data_ingestion.py:28 | File already Exists!! ]
+[2026-01-23 05:27:49 | INFO | summarizerLogger | main.py:12 | Stage : Data Ingestion stage executed and completed| Status: Success]
+[2026-01-23 05:27:49 | INFO | summarizerLogger | main.py:21 | stage Data Transformation stage initiated]
+[2026-01-23 05:27:49 | INFO | summarizerLogger | common.py:60 | Created directory at: artifacts]
+[2026-01-23 05:27:49 | INFO | summarizerLogger | common.py:60 | Created directory at: artifacts/data_transformation]
+[2026-01-23 05:27:50 | ERROR | summarizerLogger | main.py:26 | 'NoneType' object has no attribute 'endswith']
+Traceback (most recent call last):
+  File "/workspaces/Text-Summarizer-using-Hugging-face-and-Transformers/main.py", line 23, in <module>
+    data_transformation_pipeline.initiate_data_transformation()
+  File "/workspaces/Text-Summarizer-using-Hugging-face-and-Transformers/src/textSummarizer/pipeline/stage_02_data_transformation_pipeline.py", line 12, in initiate_data_transformation
+    data_transformation_comp = DataTransformation(data_transformation_config)
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/Text-Summarizer-using-Hugging-face-and-Transformers/src/textSummarizer/components/data_transformation.py", line 15, in __init__
+    self.tokenizer = AutoTokenizer.from_pretrained(config.tokenizer_name)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/Text-Summarizer-using-Hugging-face-and-Transformers/.venv/lib/python3.11/site-packages/transformers/models/auto/tokenization_auto.py", line 1175, in from_pretrained
+    return tokenizer_class_fast.from_pretrained(pretrained_model_name_or_path, *inputs, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/Text-Summarizer-using-Hugging-face-and-Transformers/.venv/lib/python3.11/site-packages/transformers/tokenization_utils_base.py", line 2113, in from_pretrained
+    return cls._from_pretrained(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/Text-Summarizer-using-Hugging-face-and-Transformers/.venv/lib/python3.11/site-packages/transformers/tokenization_utils_base.py", line 2359, in _from_pretrained
+    tokenizer = cls(*init_inputs, **init_kwargs)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/Text-Summarizer-using-Hugging-face-and-Transformers/.venv/lib/python3.11/site-packages/transformers/models/pegasus/tokenization_pegasus_fast.py", line 136, in __init__
+    super().__init__(
+  File "/workspaces/Text-Summarizer-using-Hugging-face-and-Transformers/.venv/lib/python3.11/site-packages/transformers/tokenization_utils_fast.py", line 139, in __init__
+    fast_tokenizer = convert_slow_tokenizer(self, from_tiktoken=True)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/Text-Summarizer-using-Hugging-face-and-Transformers/.venv/lib/python3.11/site-packages/transformers/convert_slow_tokenizer.py", line 1857, in convert_slow_tokenizer
+    elif transformer_tokenizer.vocab_file.endswith("tekken.json"):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'endswith'
+[2026-01-23 05:29:22 | INFO | summarizerLogger | main.py:9 | stage Data Ingestion stage initiated]
+[2026-01-23 05:29:22 | INFO | summarizerLogger | common.py:60 | Created directory at: artifacts]
+[2026-01-23 05:29:22 | INFO | summarizerLogger | common.py:60 | Created directory at: artifacts/data_ingestion]
+[2026-01-23 05:29:22 | INFO | summarizerLogger | data_ingestion.py:28 | File already Exists!! ]
+[2026-01-23 05:29:23 | INFO | summarizerLogger | main.py:12 | Stage : Data Ingestion stage executed and completed| Status: Success]
+[2026-01-23 05:29:23 | INFO | summarizerLogger | main.py:21 | stage Data Transformation stage initiated]
+[2026-01-23 05:29:23 | INFO | summarizerLogger | common.py:60 | Created directory at: artifacts]
+[2026-01-23 05:29:23 | INFO | summarizerLogger | common.py:60 | Created directory at: artifacts/data_transformation]
+[2026-01-23 05:29:32 | INFO | summarizerLogger | main.py:24 | Stage : Data Transformation stage executed and completed| Status: Success]
+[2026-01-23 05:36:32 | INFO | summarizerLogger | common.py:60 | Created directory at: artifacts]
+[2026-01-23 05:36:32 | INFO | summarizerLogger | common.py:60 | Created directory at: artifacts/model_trainer]
+[2026-01-23 05:37:22 | INFO | summarizerLogger | common.py:60 | Created directory at: artifacts]
+[2026-01-23 05:37:22 | INFO | summarizerLogger | common.py:60 | Created directory at: artifacts/model_trainer]
+[2026-01-23 05:46:49 | INFO | summarizerLogger | common.py:60 | Created directory at: artifacts]
+[2026-01-23 05:46:49 | INFO | summarizerLogger | common.py:60 | Created directory at: artifacts/model_trainer]
+[2026-01-23 05:51:16 | INFO | summarizerLogger | common.py:60 | Created directory at: artifacts]
+[2026-01-23 05:51:16 | INFO | summarizerLogger | common.py:60 | Created directory at: artifacts/model_trainer]
+[2026-01-23 05:52:58 | INFO | summarizerLogger | common.py:60 | Created directory at: artifacts]
+[2026-01-23 05:52:58 | INFO | summarizerLogger | common.py:60 | Created directory at: artifacts/model_trainer]
+[2026-01-23 05:54:13 | INFO | summarizerLogger | common.py:60 | Created directory at: artifacts]
+[2026-01-23 05:54:13 | INFO | summarizerLogger | common.py:60 | Created directory at: artifacts/model_trainer]
+[2026-01-23 06:00:05 | INFO | summarizerLogger | common.py:60 | Created directory at: artifacts]
+[2026-01-23 06:00:05 | INFO | summarizerLogger | common.py:60 | Created directory at: artifacts/model_trainer]
+[2026-01-23 06:01:32 | INFO | summarizerLogger | common.py:60 | Created directory at: artifacts]
+[2026-01-23 06:01:32 | INFO | summarizerLogger | common.py:60 | Created directory at: artifacts/model_trainer]
+[2026-01-23 06:03:08 | INFO | summarizerLogger | common.py:60 | Created directory at: artifacts]
+[2026-01-23 06:03:08 | INFO | summarizerLogger | common.py:60 | Created directory at: artifacts/model_trainer]
